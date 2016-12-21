@@ -1,17 +1,19 @@
+'use strict';
+
 /*
  * Iterative merge sort implementation in JavaScript
  * Copyright (c) 2009-2011 Nicholas C. Zakas
- * 
+ *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
  * in the Software without restriction, including without limitation the rights
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -20,7 +22,7 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
  * THE SOFTWARE.
  */
- 
+
 /**
  * Merges to arrays in order based on their natural
  * relationship.
@@ -40,11 +42,11 @@ function merge(left, right){
     }
 
     result = result.concat(left).concat(right);
-    
+
     //make sure remaining arrays are empty
     left.splice(0, left.length);
     right.splice(0, right.length);
-    
+
     return result;
 }
 
@@ -64,8 +66,8 @@ function mergeSort(items){
     var work = [],
         i,
         len;
-        
-        
+
+
     for (i=0, len=items.length; i < len; i++){
         work.push([items[i]]);
     }
@@ -80,3 +82,7 @@ function mergeSort(items){
 
     return work[0];
 }
+
+var arr = [1, 5, 21, 32, 55, 6, 0];
+
+console.log(mergeSort(arr));
